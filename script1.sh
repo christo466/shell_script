@@ -70,11 +70,7 @@ book() {
     echo "Enter the file name:"
     read book1
 
-    # Ensure the file exists
-    if [ ! -f "$book1" ]; then
-        echo "File not found!"
-        exit 1
-    fi
+   
 
     # Calculate word count, sentence count, and character count
     wordcount=$(wc -w < "$book1")
