@@ -17,7 +17,8 @@ check() {
     local lower_bound12=12
     local lower_bound13=13
     local lower_bound14=14
-    local lower_bound15=25
+    local lower_bound15=15
+    local lower_bound16=24
 
     kindergarter=$(echo "$value >= $lower_bound1 && $value < $lower_bound2" | bc)
     firstGrade=$(echo "$value >= $lower_bound2 && $value < $lower_bound3" | bc)
@@ -33,6 +34,7 @@ check() {
     eleventhGrade=$(echo "$value >= $lower_bound12 && $value < $lower_bound13" | bc)
     twelfthGrade=$(echo "$value >= $lower_bound13 && $value < $lower_bound14" | bc)
     college=$(echo "$value >= $lower_bound14 && $value < $lower_bound15" | bc)
+    professor=$(echo "$value >= $lower_bound15 && $value < $lower_bound16" | bc)
 
     if [ "$kindergarter" -eq 1 ]; then
         echo "Kindergarter"
@@ -62,6 +64,8 @@ check() {
         echo "Twelfth Grade"
     elif [ "$college" -eq 1 ]; then
         echo "College"
+    elif [ "$professor" -eq 1 ]; then
+        echo "professor"
     fi
 }
 
