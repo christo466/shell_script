@@ -3,21 +3,21 @@
 # Function to check the grade level based on ARIF score
 check() {
     local value=$1
-    local lower_bound1=5
-    local lower_bound2=6
-    local lower_bound3=7
-    local lower_bound4=8
-    local lower_bound5=9
-    local lower_bound6=10
-    local lower_bound7=11
-    local lower_bound8=12
-    local lower_bound9=13
-    local lower_bound10=14
-    local lower_bound11=15
-    local lower_bound12=16
-    local lower_bound13=17
-    local lower_bound14=18
-    local lower_bound15=22
+    local lower_bound1=1
+    local lower_bound2=2
+    local lower_bound3=3
+    local lower_bound4=4
+    local lower_bound5=5
+    local lower_bound6=6
+    local lower_bound7=7
+    local lower_bound8=8
+    local lower_bound9=9
+    local lower_bound10=10
+    local lower_bound11=11
+    local lower_bound12=12
+    local lower_bound13=13
+    local lower_bound14=14
+    local lower_bound15=25
 
     kindergarter=$(echo "$value >= $lower_bound1 && $value < $lower_bound2" | bc)
     firstGrade=$(echo "$value >= $lower_bound2 && $value < $lower_bound3" | bc)
