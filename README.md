@@ -1,5 +1,4 @@
-# shell_script
-## Automated Readability Index 
+# Automated Readability Index 
 
 This code is for calculating the Automated Readability Index (ARI) of a book and categorizing the book into different grades based on the ARI.
 
@@ -24,3 +23,9 @@ After that, we call the function __check__ and pass the __ARI__ value as the arg
 ### Grading the File
 After that, we try to find the grade for the file by comparing the value with each lowerbound from __lowerbound1__ to __lowerbound16__. We use __bc__ for performing float arithmetic operations. The __echo__ output, which is a string expression, is given to __bc__, which produces a zero or one. After that, we use if statements for checking the file grade by comparing each variable value with 1. After finding the grade, we print the grade as output using echo.
 
+### Problems Faced and solutions
+- Faced problems while performing floating point arithmetic. Solved the problem by using __bc__ which is used for performing floating point arithmetic.
+- Faced problems while trying to find sentence count of the file. Solved the problem by referring chatgpt.
+
+### Conclusion
+This program helped me to understand the basic working of the shell scripting. This program is used to find the ARI of a book and grade it based on the ARI value.
