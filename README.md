@@ -1,31 +1,17 @@
 # Automated Readability Index 
 
-This code is for calculating the Automated Readability Index (ARI) of a book and categorizing the book into different grades based on the ARI.
+This code calculates the __Automated Readability Index (ARI)__ of a book and categorizes the book into different grades based on the __ARI__. Before writing the code, I researched the Automated Readability Index by searching multiple sources like __ChatGPT__, __GeeksforGeeks__, etc. From reading about __ARI__, I learned that it is a readability test that measures the understandability of a text.
 
-### Running the Program
-We use __./script1.sh__ to run the program for checking the __ARI__. First, we call the __book()__ function, which prompts the user to enter the file for checking the __ARI__.
+I found the formula for __ARI__ from sources shared by Bala sir on Slack. Using this formula, I can find the __ARI__ of a text and __grade__ it based on the __ARI__ value. The first step was to create a file and type the code. From the start, I had to decide whether to use a __function__ in my code or not. I decided to use it since I know how to use it and it makes it easier to organize my code into different sections. I started the code by prompting the user to input the file name from the command line. My first task was to find the __word count__, __character count__, and __sentence count__ from the given file. I knew how to find the __word__ and __character__ counts, but I couldn't find the __sentence count__. I referred to __ChatGPT__ to find the sentence count from the text.
 
-### Word Count
-We use the __$(wc -w < "$book1")__ command for finding the word count from the file. __"$book1"__ is used to reference the __book1__ variable, and we direct the output to __wc -w__, which counts the number of words in the file. We store this value in a variable called __wordcount__.
+After finding the sentence count, it was time to find the __ARI__ using these values. All I had to do was substitute these values into the __ARI__ formula. But then I encountered the first major error in my code: floating point arithmetic. Bash doesn't support floating point arithmetic operations. After realizing the error, I started looking for possible solutions. I preferred to look for answers on __Stack Overflow__, which is a good website for solving these kinds of errors. I finally found the answer: I had to use a tool called __bc__, a command-line calculator that provides arbitrary precision arithmetic in Unix-like operating systems, including Bash. By using this tool, I was able to solve the problem and find the __ARI__ of the text.
 
-### Sentence Count
-We use this command __$(grep -o '[.!?]' "$book1" | wc -l)__ for finding the sentence count. grep is used for searching text files, and using -o tells grep to only print the characters inside the square brackets. We give this as input to __wc -l__ using the | (pipe). The __wc -l__ counts the number of lines, which gives the count of sentences.
+After finding the ARI, it was time to grade the text based on the ARI values. I used another function for this and called that function inside this function. I knew that grading starts from __Kindergarten__ to __college__, and I had to check for each case using __if__ and __elif__ condition statements. Before that, I encountered another problem while defining variables inside the function. I referred to __ChatGPT__ and finally used __local variables__ because I only needed them inside the function. Finally, I finished writing the code for this problem. I used __if__ and __elif__ condition statements to check the grade and printed out the grade.
 
-### Character Count
-We use __$(wc -m < "$book1")__ for finding the character count. __"$book1"__ is referenced here using __$book1__ to __wc -m__. __wc -m__ is used for finding the count of characters in __"$book1"__.
+Solving this problem helped me learn how to use __functions__ effectively and declare __local variables__ and their use cases. It also helped me search for solutions effectively on different __websites__ and __ChatGPT__.
 
-### Automated Readability Index
-We use the __ARIF=$(echo "scale=2; 4.71 * ($characters / $wordcount) + 0.5 * ($wordcount / $sentence_count) - 21.42" | bc)__ formula for finding the __ARI__. Substitute values of the __characters__, __wordcount__, and __sentence_count__.
 
-### Calling the Check Function
-After that, we call the function __check__ and pass the __ARI__ value as the argument to the function. We assign the __ARI__ value to the local variable as __value=$1__. We also define the local variables __lowerbound1__ to __lowerbound16__ and assign values to them from 1 to 14 for checking the __ARI__ value.
 
-### Grading the File
-After that, we try to find the grade for the file by comparing the value with each lowerbound from __lowerbound1__ to __lowerbound16__. We use __bc__ for performing float arithmetic operations. The __echo__ output, which is a string expression, is given to __bc__, which produces a zero or one. After that, we use if statements for checking the file grade by comparing each variable value with 1. After finding the grade, we print the grade as output using echo.
 
-### Problems Faced and solutions
-- Faced problems while performing floating point arithmetic. Solved the problem by using __bc__ which is used for performing floating point arithmetic.
-- Faced problems while trying to find sentence count of the file. Solved the problem by referring chatgpt.
 
-### Conclusion
-This program helped me to understand the basic working of the shell scripting. This program is used to find the ARI of a book and grade it based on the ARI value.
+
